@@ -1,4 +1,4 @@
 outs:
-- md5: c573f6871cef176d45e6015a9d7cafd1
-  size: 64490275
+- md5: b783f73b4a52e12d88a367ccf0af1e36
+  size: 64602739
   path: clf.pkl
