@@ -5,6 +5,7 @@ import pickle
 # Add the necessary imports for the starter code.
 from ml import data, model
 import logging
+from constants import cat_features
 logging.basicConfig(
     format='%(asctime)s - %(levelname)s - %(message)s',
     level=logging.INFO)
@@ -16,16 +17,6 @@ dat = pd.read_csv("./data/cleaned.csv")
 # train-test split.
 logging.info("Doing train-test data split")
 train, test = train_test_split(dat, test_size=0.20)
-
-cat_features = [
-    "workclass",
-    "education",
-    "marital-status",
-    "occupation",
-    "relationship",
-    "race",
-    "sex",
-]
 
 # Process the test data with the process_data function.
 logging.info("Processing data and creating encoders")

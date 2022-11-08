@@ -6,11 +6,11 @@ from ml import data, model
 import pickle
 import pandas as pd
 import os
-from train_model import cat_features
+from constants import cat_features
 
 if "DYNO" in os.environ and os.path.isdir(".dvc"):
     os.system("dvc config core.no_scm true")
-    if os.system("dvc pull") != 0:
+    if os.system("dvc pull -f") != 0:
         exit("dvc pull failed")
     os.system("rm -r .dvc .apt/usr/lib/dvc")
 
