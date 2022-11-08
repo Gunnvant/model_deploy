@@ -13,6 +13,8 @@ Github workflow is used for Continuous Integration
 
 Heroku is used for Continuous Deployment
 
+[Link to Api](https://gun-model-deployment.herokuapp.com/)
+
 ## Important docs:
 
 1. [Slice_output.txt](./src/slice_output.txt)
