@@ -7,10 +7,16 @@ import pickle
 import pandas as pd
 import os
 from constants import cat_features
+import logging
+logging.basicConfig(
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    level=logging.INFO)
 
-if "DYNO" in os.environ and os.path.isdir(".dvc"):
+logging.info("Checking if deployed on heroku")
+if "DYNO" in os.environ:
     os.system("dvc config core.no_scm true")
     if os.system("dvc pull -f") != 0:
+        logging.error("dvc pull unsuccessful")
         exit("dvc pull failed")
     os.system("rm -r .dvc .apt/usr/lib/dvc")
 
@@ -24,6 +30,7 @@ def load_asset(path):
     return asset
 
 
+logging.info("Loading ")
 path_model = "./model/clf.pkl"
 path_enc = "./model/encoder.pkl"
 path_lb = "./model/lb.pkl"
