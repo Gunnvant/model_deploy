@@ -57,6 +57,12 @@ def get_slice_performance(dat, clf, encoder, lb):
 # Train and save a model.
 logging.info("Model training started...")
 clf = model.train_model(X_train, y_train)
+X_test, y_test, _, _ = data.process_data(
+    test, categorical_features=cat_features, label="salary", training=False,
+    encoder=encoder, lb=lb)
+pred_test = clf.predict(X_test)
+precision, recall, fbeta = model.compute_model_metrics(y_test, pred_test)
+logging.info(f'Precision:{precision},Recall:{recall},Fbeta:{fbeta}')
 logging.info("Model training done. Saving assets")
 save_assets(clf, encoder, lb)
 logging.info("Generating Model Slices")
