@@ -12,3 +12,13 @@ Data and model artifacts are version controlled using `dvc`. `s3` is used as art
 Github workflow is used for Continuous Integration
 
 Heroku is used for Continuous Deployment
+
+## Important docs:
+
+1. [Slice_output.txt](./src/slice_output.txt)
+2. [Model_card](./src/model_card.md)
+3. [CI passing](./screenshots/continous_integration.png)
+4. [Example docs](./screenshots/example.png)
+5. [Continous deployment](./screenshots/continous_deployment.png)
+6. [Live post](./screenshots/live_post.png)
+7. [Live get](./screenshots/live_get.png)
